@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Animation voice</title>
+  </head>
+
+  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
+  <!-- MDB -->
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
+<style>
+  body{
+    text-align: center;
+    background-color: dimgrey;
+  }
+  .img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cam{
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    border: 10px solid #ababab;
+  }
+  .model{
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    border: 10px solid #ababab;
+  }
+</style>
+  
+  <body style="background-color: rgba(105, 105, 105, 0.377);">
+    
+    <header>
+      
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="ayuda.html">Ayuda del sitio</a>
+                  </li>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Navbar -->
+        
+        <div
+          id="intro"
+          class="p-3 text-center bg-image"
+          style="height: 9rem"
+        >
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white">
+                <h1 class="mb-3">Aplicacion AR usando QR</h1>
+                <h5 class="mb-4">Esta aplicación muestra un modelo de animacion usando un marcador personalizado</h5>
+                <h6 class="mb-4">Cargue su propia imagen como un marcador para visualizar los objetos</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+      <div class="row ">
+        <div class="col-sm-6" style="width: 30rem">
+            <div class="container m-2" >
+                <div class="card mb-2" >
+                    <div class="card-body">
+                    <h5 class="card-title">Carga de imagen</h5>
+                    <input type="file" class="custom-file-input" id="file_image"
+                        aria-describedby="inputGroupFileAddon01" onchange="charge()" >
+                    </div>
+                </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                    <h5 id="voice" class="card-title">Carga de modelos</h5>
+                    <h6 class="card-title">solo se admiten archivos de tipo ___</h6>
+                      <input type="file" class="custom-file-input" id="file_model"
+                      aria-describedby="inputGroupFileAddon01" onchange="charge()" >
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6" style="width: 60rem">
+            <div class="card mb-2">
+                <div class="card-body text-center">
+                <h5 class="card-title">Zona de visualizacion</h5>
+                  <div class="cam">
+                    <iframe src="ar.html" width="720px" height="480px"></iframe>
+                  </div>
+
+                <div class="container">
+                    <input type="button" value="Reiniciar app" onClick="location.reload();" 
+                    style="width: 200px; height: 30px; background: #3e4046; color: #ffffff; 
+                    cursor: pointer; border: 0px;"/>
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+      <!-- Footer -->
+      <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="www.linkedin.com/in/alejandro-garcia-586524210" role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/alxgaramez/examen.git" role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="index.html">AlxGaramez</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+></script>
+  </body>
+</html>
