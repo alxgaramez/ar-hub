@@ -4,13 +4,13 @@
 
 /* Color Variables */
 :root {
-  --primary-color: #fff700;
-  --primary-color-dark: #e6de00;
-  --secondary-color: #00dba0;
-  --secondary-color-dark: #00c28e;
+  --primary-color: #cfd2ee;
+  --primary-color-dark: #86ddecc5;
+  --secondary-color: #464747af;
+  --secondary-color-dark: #6f7271;
   --passive-color: #f2f2f2;
   --passive-color-dark: #d9d9d9;
-  --link-color: #0000ff;
+  --link-color: #00ccff;
   --max-z-index: 99999;
 }
 
@@ -328,3 +328,4 @@ body{
   padding: 20px;
   border: 10px solid #ababab;
 }
+
