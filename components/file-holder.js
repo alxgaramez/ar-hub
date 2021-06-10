@@ -9,12 +9,12 @@ const fileHolderTemplate = `
       background: var(--passive-color);
       border: 1px solid var(--passive-color-dark);
       box-sizing: border-box;
-      border-radius: 5px;
+      border-radius: 2px;
       font-family: Chakra Petch;
       font-style: normal;
       font-weight: 600;
       font-size: 1.25em;
-      line-height: 25px;
+      line-height: 20px;
       color: var(--passive-color-dark);
       cursor: pointer;
     }

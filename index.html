@@ -26,7 +26,7 @@
     <script src="/components/back-anchor.js"></script>
     <script src="/components/file-holder.js"></script>
     <script src="/components/file-select.js"></script>
-    <script src="/components/header.js"></script>
+    
     <script src="/components/footer.js"></script>
     <script src="/components/model-controller.js"></script>
     <script src="/components/fstickybutton.js"></script>
@@ -36,6 +36,7 @@
     <script src="/utils/fileTemplate.js"></script>
     <script src="/utils/fileHandler.js"></script>
     <script src="/marker.js" defer></script>
+    
 
 
   <!-- Font Awesome -->
@@ -103,84 +104,63 @@
 
 
       <div class="row ">
+
         <div class="col-sm-6" style="width: 50rem">
-            <div class="container m-2" >
-                <div class="card mb-2" >
-                    <div class="card-body">
-                    <h5 class="card-title">Carga de imagen</h5>
-                    <input type="file" class="custom-file-input" id="file_image"
-                        aria-describedby="inputGroupFileAddon01" onchange="charge()" >
-                    </div>
+          <div class="container m-2" >
+            <div class="card mb-2" >
+              <div class="card-body">
+                <h5 class="card-title">Carga de imagen</h5>
+                  <input type="file" class="custom-file-input" id="file_image"
+                    aria-describedby="inputGroupFileAddon01" onchange="charge()" >
                 </div>
-                <div class="card mb-2" style="height: 40rem">
-                    <div class="card-body">
-                    <h5 id="voice" class="card-title">Carga de modelos</h5>
-                    <h6 class="card-title">solo se admiten archivos de tipo GLTF</h6>
+              </div>
+              <div class="card" style="height: 40rem">
+                <div class="card-body">
+                  <h5 id="voice" class="card-title">Carga de modelos</h5>
+                  <h6 class="card-title">solo se admiten archivos de tipo GLTF</h6>
 
-                    <label class="button">
-                      <input id="content-file" accept="*" type="file" hidden onchange="handleContentUpload(this)" />
-                      Upload file
-                  </label>
-                  
-                  </div>
-                    <div id="content-preview" target="content-file">
+                  <div class="pages-content">
+                    <div class="pages-content-container">
+                      <div class="pages-content-element">
+                        <form action="modifica.php" method="POST">
+                          <input id="cont-file" accept="*" type="file" >
+                          <input type="submit"/>
+                      </form>
+                        <input id="content-file" accept="*" type="file" hidden onchange="handleContentUpload(this)" />
+                        
+                          <p id="content-error" class="error"></p>
+                      </div>
+                      <div id="content-preview" target="content-file">
                         <file-holder></file-holder>
+                        
+                      </div>
                     </div>
+                    <hr>
                   </div>
-
-
-                    
-                    </div>
                 </div>
+              </div>
             </div>
         </div>
+
         <div class="col-sm-6" >
-            <div class="card mb-2 ">
-                <div class="card-body text-center">
+          <div class="card mb-2 ">
+            <div class="card-body text-center">
                 <h5 class="card-title">Zona de visualizacion</h5>
-                  <div class="cam">
-                    <iframe src="ar.html" width="720px" height="480px"></iframe>
-                  </div>
-
-                
-                </div>
+              <div class="cam">
+                <iframe src="ar.html" width="720px" height="480px"></iframe>
+              </div>
             </div>
+          </div>
         </div>
+
       </div>
-
-
-      <!-- Footer -->
-      <footer class="bg-dark text-center text-white">
-        <!-- Grid container -->
-        <div class="container">
-          <!-- Section: Social media -->
-          <section class="mb-4">
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="www.linkedin.com/in/alejandro-garcia-586524210" role="button"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+      <page-footer></page-footer>
       
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/alxgaramez/examen.git" role="button"
-              ><i class="fab fa-github"></i
-            ></a>
-          </section>
-          <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2020 Copyright:
-          <a class="text-white" href="index.html">AlxGaramez</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
     <!-- MDB -->
 <script
 type="text/javascript"
 src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
 ></script>
+
   </body>
 </html>
