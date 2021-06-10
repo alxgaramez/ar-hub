@@ -1,6 +1,5 @@
 <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
 
-<<<<<<< HEAD
 <style>
   .arjs-loader {
     height: 100%;
@@ -14,39 +13,6 @@
     justify-content: center;
     align-items: center;
   }
-=======
-<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
-<script src="https://rawgit.com/donmccurdy/aframe-extras/mastr/dist/aframe-xtras.loaders.min.js"></script>
-
-    <body style="margin :0px; overflow:hidden;">
-        <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
-            <a-entity id="pillar" crossOrigin="anonymous">
-                <a-marker preset="hiro">
-                    <a-entity gltf-model="url(knife.gltf)" scale=".005 .005 .005" position="0 0 0" rotation="270 0 0"></a-entity>
-                </a-marker>
-            <a-entity camera></a-entity>
-            
-        </a-scene>
-
-        
-
-        <script> 
-
-            document.getElementById("content-file").addEventListener("click",(e)=>{
-            
-            
-              var el=document.querySelector('#pillar');
-              
-              el.setAttribute("gltf-model", e);
-              
-            })
-            
-          
-           </script>
-    </body>
-</html>
->>>>>>> a483f3a3d8ad8d2fe2c67537fd6b0bbf9e554929
 
   .arjs-loader div {
     text-align: center;
@@ -70,12 +36,13 @@
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
         <a-nft
-            type='nft' url='./trex/trex-image/qr-300'
+            type='nft' url='./marcador/cheems'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
             <a-entity
-                gltf-model='./trex/scene.gltf'
-                scale="5 5 5"
-                position="150 300 -100"
+                gltf-model='./knife.gltf'
+                scale="1 1 1"
+                position="0 0 0"
+                rotation="270 0 0"
                 >
             </a-entity>
         </a-nft>
