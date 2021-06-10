@@ -13,10 +13,15 @@
 
     <body style="margin :0px; overflow:hidden;">
         <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
-            <a-marker preset="hiro">
-                <a-entity gltf-model="url(knife.gltf)" scale=".005 .005 .005" position="0 0 0" rotation="270 0 0"></a-entity>
-            </a-marker>
+            <a-entity id="pillar" crossOrigin="anonymous">
+                <a-marker preset="hiro">
+                    <a-entity gltf-model="url(knife.gltf)" scale=".005 .005 .005" position="0 0 0" rotation="270 0 0"></a-entity>
+                </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
 </html>
+
+
+
+

@@ -2,41 +2,53 @@
 <html lang="es">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Animation voice</title>
-  </head>
 
-  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/marker.css" />
+
+    <!-- import studio-backend api -->
+    <script
+        src="https://raw.githack.com/AR-js-org/studio-backend/master/dist/arjs-studio-backend.min.js"></script>
+
+    <!-- import aframe to support model preview -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.js"></script>
+    <script src="https://cdn.statically.io/gh/donmccurdy/aframe-extras/fe293f78/dist/aframe-extras.loaders.js"></script>
+
+    <!-- import JsZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.3.0/jszip.min.js"></script>
+
+    <!-- import web components -->
+    <script src="/components/back-anchor.js"></script>
+    <script src="/components/file-holder.js"></script>
+    <script src="/components/file-select.js"></script>
+    <script src="/components/header.js"></script>
+    <script src="/components/footer.js"></script>
+    <script src="/components/model-controller.js"></script>
+    <script src="/components/fstickybutton.js"></script>
+
+    <!-- import utils -->
+    <script src="/utils/fileHelper.js"></script>
+    <script src="/utils/fileTemplate.js"></script>
+    <script src="/utils/fileHandler.js"></script>
+    <script src="/marker.js" defer></script>
+
+
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
   <!-- MDB -->
   <link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
+  </head>
+
+  
 <style>
-  body{
-    text-align: center;
-    background-color: dimgrey;
-  }
-  .img{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cam{
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 20px;
-    border: 10px solid #ababab;
-  }
-  .model{
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 20px;
-    border: 10px solid #ababab;
-  }
+  
 </style>
   
   <body style="background-color: rgba(105, 105, 105, 0.377);">
@@ -91,7 +103,7 @@
 
 
       <div class="row ">
-        <div class="col-sm-6" style="width: 30rem">
+        <div class="col-sm-6" style="width: 50rem">
             <div class="container m-2" >
                 <div class="card mb-2" >
                     <div class="card-body">
@@ -100,30 +112,37 @@
                         aria-describedby="inputGroupFileAddon01" onchange="charge()" >
                     </div>
                 </div>
-                <div class="card mb-2">
+                <div class="card mb-2" style="height: 40rem">
                     <div class="card-body">
                     <h5 id="voice" class="card-title">Carga de modelos</h5>
-                    <h6 class="card-title">solo se admiten archivos de tipo ___</h6>
-                      <input type="file" class="custom-file-input" id="file_model"
-                      aria-describedby="inputGroupFileAddon01" onchange="charge()" >
-                      
+                    <h6 class="card-title">solo se admiten archivos de tipo GLTF</h6>
+
+                    <label class="button">
+                      <input id="content-file" accept="*" type="file" hidden onchange="handleContentUpload(this)" />
+                      Upload file
+                  </label>
+                  
+                  </div>
+                    <div id="content-preview" target="content-file">
+                        <file-holder></file-holder>
+                    </div>
+                  </div>
+
+
+                    
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6" style="width: 60rem">
-            <div class="card mb-2">
+        <div class="col-sm-6" >
+            <div class="card mb-2 ">
                 <div class="card-body text-center">
                 <h5 class="card-title">Zona de visualizacion</h5>
                   <div class="cam">
                     <iframe src="ar.html" width="720px" height="480px"></iframe>
                   </div>
 
-                <div class="container">
-                    <input type="button" value="Reiniciar app" onClick="location.reload();" 
-                    style="width: 200px; height: 30px; background: #3e4046; color: #ffffff; 
-                    cursor: pointer; border: 0px;"/>
-                </div>
+                
                 </div>
             </div>
         </div>
